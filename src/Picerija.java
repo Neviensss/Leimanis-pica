@@ -1,15 +1,33 @@
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 import javax.swing.JOptionPane;
 
 public class Picerija {
 	
 	public static double cena;
-	public String[] pica;
 	
-	public static void PievienotSutijumu() {
+	static Pica[] PievienotSutijumu(Pica[] masivs) {
+		 try {
+		FileWriter fw = new FileWriter("Klienti.txt", false);
+		PrintWriter bw = new PrintWriter(fw);
+		FileWriter pfw = new FileWriter("picas.txt", false);
+		PrintWriter pbw = new PrintWriter(pfw);
 		String picas;
-		String custom;
-		boolean siers = false, desa = false, senes = false, ananass = false, olivas = false;
-		int sieraDaudzums = 0, desaDaudzums = 0, senesDaudzums = 0, ananassDaudzums = 0, olivasDaudzums = 0;
+		
+		String vards, pilseta, iela, maja, dzivoklis;
+		
+		vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
+		pilseta = JOptionPane.showInputDialog("Ievadiet savu pilsētu:");
+		iela = JOptionPane.showInputDialog("Ievadiet savu ielu:");
+		maja = JOptionPane.showInputDialog("Ievadiet savu mājas numuru:");
+		dzivoklis = JOptionPane.showInputDialog("Ievadiet savu dzīvokļa numuru:");
+		
+		String dati = "Vārds: "+vards+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
+		System.out.print(dati);
+		
+		bw.print(dati);
+		bw.close();
 		
 		do {
 			picas = JOptionPane.showInputDialog("1 - Havaju Pica || 2 - Pikantā pica || 3 - Supreme pica || 4 - Paštaisītā || atpakal - Beigt darbības");
@@ -27,99 +45,33 @@ public class Picerija {
 				
 				break;
 			case "4":
+				int siers;
+				int peperoni;
+				int ananass;
+				int olivas;
+				int senes;
+				for(int i=0; i<masivs.length;i++){
 				do {
-				custom = JOptionPane.showInputDialog("1 - Siers || 2 - Peperoni || 3 - Sēnes || 4 - Ananāss || 5 - Olīvas || atpakal - atgriezties pie izvēles");
-				custom = custom.toLowerCase();
-				
-				switch(custom) {
-				
-				case "1":
-					if(siers == false) {
-						JOptionPane.showMessageDialog(null, "Tu picai pievienoji sieru");
-						cena = cena + 0.25;
-						siers = true;
-						sieraDaudzums++;
-						System.out.println(sieraDaudzums);
-					}else if(siers == true && sieraDaudzums <=2) {
-						JOptionPane.showInputDialog(null, "Tu jau pievienoji sieru, vēlies pielikt vēl? (1 - jā || 2 - nē)");
-						cena = cena + 0.25;
-						sieraDaudzums++;
-						System.out.println(sieraDaudzums);
-					}else if(siers == true && sieraDaudzums >=3) {
-						JOptionPane.showMessageDialog(null, "Tu vairs nevari pielikt sieru");
-					}
-				case "2":
-					if(desa == false) {
-						JOptionPane.showMessageDialog(null, "Tu picai pievienoji peperoni");
-						cena = cena + 0.25;
-						desa = true;
-						desaDaudzums++;
-						System.out.println(desaDaudzums);
-					}else if(desa == true && desaDaudzums <=2) {
-						JOptionPane.showInputDialog(null, "Tu jau pievienoji peperoni, vēlies pielikt vēl? (1 - jā || 2 - nē)");
-						cena = cena + 0.25;
-						desaDaudzums++;
-						System.out.println(desaDaudzums);
-					}else if(desa == true && desaDaudzums >=3) {
-						JOptionPane.showMessageDialog(null, "Tu vairs nevari pielikt peperoni");
-					}
-				case "3":
-					if(senes == false) {
-						JOptionPane.showMessageDialog(null, "Tu picai pievienoji sēnes");
-						cena = cena + 0.25;
-						senes = true;
-						senesDaudzums++;
-						System.out.println(senesDaudzums);
-					}else if(senes == true && senesDaudzums <=2) {
-						JOptionPane.showInputDialog(null, "Tu jau pievienoji sēnes, vēlies pielikt vēl? (1 - jā || 2 - nē)");
-						cena = cena + 0.25;
-						senesDaudzums++;
-						System.out.println(senesDaudzums);
-					}else if(senes == true && senesDaudzums >=3) {
-						JOptionPane.showMessageDialog(null, "Tu vairs nevari pielikt sēnes");
-					}
-				case "4":
-					if(ananass == false) {
-						JOptionPane.showMessageDialog(null, "Tu picai pievienoji ananāsu");
-						cena = cena + 0.25;
-						ananass = true;
-						ananassDaudzums++;
-						System.out.println(ananassDaudzums);
-					}else if(ananass == true && ananassDaudzums <=2) {
-						JOptionPane.showInputDialog(null, "Tu jau pievienoji ananāsu, vēlies pielikt vēl? (1 - jā || 2 - nē)");
-						cena = cena + 0.25;
-						ananassDaudzums++;
-						System.out.println(ananassDaudzums);
-					}else if(ananass == true && ananassDaudzums >=3) {
-						JOptionPane.showMessageDialog(null, "Tu vairs nevari pielikt ananāsu");
-					}
-				case "5":
-					if(olivas == false) {
-						JOptionPane.showMessageDialog(null, "Tu picai pievienoji olīvas");
-						cena = cena + 0.25;
-						olivas = true;
-						olivasDaudzums++;
-						System.out.println(olivasDaudzums);
-					}else if(olivas == true && olivasDaudzums <=2) {
-						JOptionPane.showInputDialog(null, "Tu jau pievienoji olīvas, vēlies pielikt vēl? (1 - jā || 2 - nē)");
-						cena = cena + 0.25;
-						olivasDaudzums++;
-						System.out.println(olivasDaudzums);
-					}else if(olivas == true && olivasDaudzums >=3) {
-						JOptionPane.showMessageDialog(null, "Tu vairs nevari pielikt olīvas");
-					}
-					case "atpakal":
-						sieraDaudzums  = 0;
-						desaDaudzums  = 0;
-						senesDaudzums = 0;
-						ananassDaudzums = 0;
-						olivasDaudzums = 0;
-						break;
+					siers = Integer.parseInt(JOptionPane.showInputDialog("Cik daudz sieru pievienot? (max 3)"));
+				}while(siers>3);
+				do {
+					peperoni = Integer.parseInt(JOptionPane.showInputDialog("Cik daudz peperoni pievienot? (max 3)"));
+				}while(peperoni>3);
+				do {
+					ananass = Integer.parseInt(JOptionPane.showInputDialog("Cik daudz ananāsu pievienot? (max 3)"));
+				}while(ananass>3);
+					do {
+					olivas = Integer.parseInt(JOptionPane.showInputDialog("Cik daudz olivas pievienot? (max 3)"));
+					}while(olivas>3);
+					do {
+					senes = Integer.parseInt(JOptionPane.showInputDialog("Cik daudz senes pievienot? (max 3)"));
+					}while(senes>3);
+					masivs[i] = new Pica(siers, peperoni, ananass, olivas, senes);
+					pbw.print("Siers: "+siers+"; Peperoni: "+peperoni+"; Ananāss: "+ananass+"; Olivas: "+olivas+"; Sēnes: "+senes);
+					pbw.close();
+					break;
 				}
-				
-				}while(!custom.equals("atpakal"));
-				
-				break;
+					
 			case "atpakal":
 				break;
 			default:
@@ -129,14 +81,15 @@ public class Picerija {
 			
 		}while(!picas.equals("atpakal"));
 		
-	}
-	
-	public static void ApskatitPicas() {
+		 }catch(Exception e) {
+			 JOptionPane.showMessageDialog(null, "Radusies kļūda", "Kļūda", JOptionPane.ERROR_MESSAGE);
+		 }
+		 return masivs;
 		
 	}
 
 	public static void main(String[] args) {
-		
+		Pica[] picaMasivs = null;
 		String izvele;
 		
 		do {
@@ -146,10 +99,17 @@ public class Picerija {
 			switch(izvele) {
 			
 			case "1":
-				PievienotSutijumu();
+				try{
+					int daudzums = Integer.parseInt(JOptionPane.showInputDialog("Cik picas vēlaties pasūtīt?"));
+					picaMasivs = new Pica[daudzums];
+					picaMasivs = PievienotSutijumu(picaMasivs);
+					
+				}catch(Exception e){
+					JOptionPane.showMessageDialog(null, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 
+				}
 				break;
 			case "2":
-				ApskatitPicas();
+			
 				break;
 			case "stop":
 				JOptionPane.showMessageDialog(null, "Programma apturēta");
