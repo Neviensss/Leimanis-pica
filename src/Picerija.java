@@ -20,7 +20,6 @@ public class Picerija {
 		String izvele;
 		String lielums;
 		int ved = 0;
-		
 		String vards, pilseta, iela, maja, dzivoklis, javed;
 		
 		vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
@@ -48,14 +47,12 @@ public class Picerija {
 			}
 		}while(javed.equals("atpakal"));
 		
-		
 		String dati = "\nVārds: "+vards+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
 		do {
 		lielums = JOptionPane.showInputDialog(" 1 - 20cm || 2 - 30cm || 3 - 40cm || 4 - 50cm || atpakal - aizvērt izvēlni");
 		lielums = lielums.toLowerCase();
 		
 		switch(lielums) {
-		
 		case "1":
 			cena = cena - 2;
 			break;
@@ -75,14 +72,11 @@ public class Picerija {
 		}
 		}while(lielums.equals("atpakal"));
 		
-		
 		do {
 			izvele = JOptionPane.showInputDialog("1 - Izvēlēties izmēru || 2 - Havaju Pica || 3 - Pikantā pica || 4 - Supreme pica || 5 - Paštaisītā || atpakal - Beigt darbības");
 			izvele = izvele.toLowerCase();
 			
-			
 			switch(izvele) {
-			
 			case "1":
 				break;
 			case "2":
@@ -116,7 +110,6 @@ public class Picerija {
 				abw.close();
 				break;
 			case "5":
-				
 				int siers;
 				int peperoni;
 				int ananass;
@@ -151,7 +144,6 @@ public class Picerija {
 			 JOptionPane.showMessageDialog(null, "Radusies kļūda", "Kļūda", JOptionPane.ERROR_MESSAGE);
 		 }
 	}
-	
 	static void apskatitPicas() {
 		try {
 			String teksts, virkne="";
@@ -167,7 +159,6 @@ public class Picerija {
 		}
 		
 	}
-	
 	static void apskatitCenas() {
 		String izvele;
 		do {
@@ -193,7 +184,6 @@ public class Picerija {
 		
 		}while(!izvele.equals("atpakal"));
 	}
-
 	public static void main(String[] args) {
 		String izvele;
 		
@@ -202,14 +192,8 @@ public class Picerija {
 			izvele = izvele.toLowerCase();
 			
 			switch(izvele) {
-			
 			case "1":
-				try{
 					PievienotSutijumu();
-					
-				}catch(Exception e){
-					JOptionPane.showMessageDialog(null, "Darbība nepastāv!", "Kļūme",JOptionPane.ERROR_MESSAGE); 
-				}
 				break;
 			case "2":
 			apskatitPicas();
@@ -225,7 +209,5 @@ public class Picerija {
 				break;
 			}
 		}while(!izvele.equals("stop"));
-
 	}
-
 }
