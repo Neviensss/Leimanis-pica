@@ -1,5 +1,0 @@
-
-Vārds: Niks; Pilsēta: Kuldiga; Iela: Liepajas; Māja: 120; Dzīvoklis: 2
-Vārds: KKas; Pilsēta: nav; Iela: nav; Māja: nav; Dzīvoklis: nav
-Vārds: a; Pilsēta: a; Iela: a; Māja: a; Dzīvoklis: a
-Vārds: a; Pilsēta: a; Iela: a; Māja: a; Dzīvoklis: a
