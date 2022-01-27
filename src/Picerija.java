@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
@@ -41,8 +43,7 @@ public class Picerija {
 			}
 		}while(javed.equals("atgriezties"));
 		
-		String dati = "Vārds: "+vards+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
-		System.out.print(dati);
+		String dati = "\nVārds: "+vards+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
 		
 		bw.print(dati);
 		bw.close();
@@ -50,30 +51,31 @@ public class Picerija {
 		do {
 			izvele = JOptionPane.showInputDialog("1 - Havaju Pica || 2 - Pikantā pica || 3 - Supreme pica || 4 - Paštaisītā || atpakal - Beigt darbības");
 			izvele = izvele.toLowerCase();
+			do {
+				lielums = JOptionPane.showInputDialog(" 1 - 20cm || 2 - 30cm || 3 - 40cm || 4 - 50cm || atgriezties - aizvērt izvēlni");
+				lielums = lielums.toLowerCase();
+				
+				switch(lielums) {
+				
+				case "1":
+					cena = cena - 2;
+					break;
+				case "2":
+					break;
+				case "3":
+					cena = cena + 2.50;
+					break;
+				case "4":
+					cena = cena + 5.25;
+					break;
+				}
+				
+			}while(lielums.equals("atgriezties"));
 			
 			switch(izvele) {
 			
+			
 			case "1":
-				do {
-					lielums = JOptionPane.showInputDialog(" 1 - 20cm || 2 - 30cm || 3 - 40cm || 4 - 50cm || atgriezties - aizvērt izvēlni");
-					lielums = lielums.toLowerCase();
-					
-					switch(lielums) {
-					
-					case "1":
-						cena = cena - 2;
-						break;
-					case "2":
-						break;
-					case "3":
-						cena = cena + 2.50;
-						break;
-					case "4":
-						cena = cena + 5.25;
-						break;
-					}
-					
-				}while(lielums.equals("atgriezties"));
 				cena = cena + 12.45;
 					JOptionPane.showMessageDialog(null, "Cena par Havaju picu ir "+cena+"€");
 					pbw.print("\n Supereme pica,"+" Cena: "+cena+"€");
@@ -119,6 +121,28 @@ public class Picerija {
 			 JOptionPane.showMessageDialog(null, "Radusies kļūda", "Kļūda", JOptionPane.ERROR_MESSAGE);
 		 }
 	}
+	
+	static void apskatitPicas() {
+		try {
+			String teksts, virkne="", teksts2, virkne2="";
+			FileReader fr = new FileReader("picas.txt");
+			BufferedReader br = new BufferedReader(fr);
+			FileReader kfr = new FileReader("Klienti.txt");
+			BufferedReader kbr = new BufferedReader(kfr);
+			while((teksts=br.readLine()) !=null){
+				virkne = virkne+teksts+"\n";
+			}
+			while((teksts2=kbr.readLine()) !=null){
+				virkne2 = virkne2+teksts2+"\n";
+			}
+			br.close();
+			kbr.close();
+			JOptionPane.showMessageDialog(null, virkne2+""+virkne);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Radusies kļūda", "Kļūda", JOptionPane.ERROR_MESSAGE);
+		}
+		
+	}
 
 	public static void main(String[] args) {
 		String izvele;
@@ -138,7 +162,7 @@ public class Picerija {
 				}
 				break;
 			case "2":
-			
+			apskatitPicas();
 				break;
 			case "stop":
 				JOptionPane.showMessageDialog(null, "Programma apturēta");

@@ -1,6 +1,5 @@
-Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1 Cena: 15.0Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1 Cena: 15.0
-Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1 Cena: 15.0
- Supereme pica Cena: 19.7
+
  Supereme pica, Cena: 15.45€
-Siers: 1; Peperoni: 1; Ananāss: 1; Olivas: 1; Sēnes: 1 Cena: 15.0€
- Supereme pica, Cena: 15.45€
+ Supereme pica, Cena: 14.95€
+ Supereme pica, Cena: 17.95€
+ Supereme pica, Cena: 14.45€
