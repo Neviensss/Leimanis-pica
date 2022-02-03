@@ -20,9 +20,10 @@ public class Picerija {
 		String izvele;
 		String lielums;
 		int ved = 0;
-		String vards, pilseta, iela, maja, dzivoklis, javed;
+		String vards, pilseta, iela, maja, dzivoklis, javed, telnr;
 		
 		vards = JOptionPane.showInputDialog("Ievadiet savu vārdu:");
+		telnr = JOptionPane.showInputDialog("Ievadiet savu telefona numuru:");
 		pilseta = JOptionPane.showInputDialog("Ievadiet savu pilsētu:");
 		iela = JOptionPane.showInputDialog("Ievadiet savu ielu:");
 		maja = JOptionPane.showInputDialog("Ievadiet savu mājas numuru:");
@@ -47,7 +48,7 @@ public class Picerija {
 			}
 		}while(javed.equals("atpakal"));
 		
-		String dati = "\nVārds: "+vards+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
+		String dati = "\nVārds: "+vards+"; Tel.nr: "+telnr+"; Pilsēta: "+pilseta+"; Iela: "+iela+"; Māja: "+maja+"; Dzīvoklis: "+dzivoklis;
 		do {
 		lielums = JOptionPane.showInputDialog(" 1 - 20cm || 2 - 30cm || 3 - 40cm || 4 - 50cm || atpakal - aizvērt izvēlni");
 		lielums = lielums.toLowerCase();
@@ -73,13 +74,11 @@ public class Picerija {
 		}while(lielums.equals("atpakal"));
 		
 		do {
-			izvele = JOptionPane.showInputDialog("1 - Izvēlēties izmēru || 2 - Havaju Pica || 3 - Pikantā pica || 4 - Supreme pica || 5 - Paštaisītā || atpakal - Beigt darbības");
+			izvele = JOptionPane.showInputDialog("1 - Havaju Pica || 2 - Pikantā pica || 3 - Supreme pica || 4 - Paštaisītā || atpakal - Beigt darbības");
 			izvele = izvele.toLowerCase();
 			
 			switch(izvele) {
 			case "1":
-				break;
-			case "2":
 				cena = cena + 12.45;
 					JOptionPane.showMessageDialog(null, "Cena par Havaju picu ir "+cena+"€");
 					abw.print("Pasūtītājs: "+dati+"\n"
@@ -89,7 +88,7 @@ public class Picerija {
 					pbw.close();
 					abw.close();
 				break;
-			case "3":
+			case "2":
 				cena = cena + 13.45;
 				JOptionPane.showMessageDialog(null, "Cena par Pikanto picu ir "+cena+"€");
 				abw.print("Pasūtītājs: "+dati+"\n"
@@ -99,7 +98,7 @@ public class Picerija {
 				pbw.close();
 				abw.close();
 				break;
-			case "4":
+			case "3":
 				cena = cena + 15;
 				JOptionPane.showMessageDialog(null, "Cena par Supreme picu ir "+cena+"€");
 				abw.print("Pasūtītājs: "+dati+"\n"
@@ -109,7 +108,7 @@ public class Picerija {
 				pbw.close();
 				abw.close();
 				break;
-			case "5":
+			case "4":
 				int siers;
 				int peperoni;
 				int ananass;
