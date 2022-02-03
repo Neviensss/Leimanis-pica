@@ -5,3 +5,4 @@ Java projekts, kurā tiek izveidota picērijas programma.
 
 ### **Darāmo darbu saraksts**
 - [x] Pievinot telefona numuru klientu reģistram
+- [x] Izlabot kļūdu ar picas izmēra izvēli
